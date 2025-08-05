@@ -1,1 +1,10 @@
+
+
+/* ✅ Place Google Font import FIRST */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 @import "tailwindcss";
+/* Then Tailwind directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
