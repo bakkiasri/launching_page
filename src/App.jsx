@@ -101,7 +101,7 @@ function App() {
       </div>
       </div>
       <div className='pt-15 pb-7 px-3 md:px-15 bg-[#F7F8FB]'>
-         <div className="grid  items-top  p-7 px-15 grid-cols-1 md:grid-cols-2  ">
+         <div className="grid  items-top  p-7 px-2 md:px-15 grid-cols-1 md:grid-cols-2  ">
       <div className='text-4xl font-medium text-[#100B39] ps-10 pt-4 '>
         About Vellore Semicon
       </div>
@@ -166,7 +166,7 @@ function App() {
       </div>
       {/* Our True Client */}
       <div className='flex  justify-center items-center text-xl  p-3 '>    
-        <div className='px-3 md:px-25 py-3'>
+        <div className='px-1 md:px-25 py-3'>
             <h2 className='text-4xl   text-center font-medium text-[#100B39] mb-4'>Our Trusted clients</h2>
             <div className="grid grid-cols-5 grid-rows-2 gap-4">            
                <div className=" p-4"><img src={one} alt="one" className="" /></div>
@@ -183,9 +183,9 @@ function App() {
         </div>
         </div>
         {/* our contact */}
-        <div className="grid flex p-2 lg:grid-cols-2 grid-cols-1 md lg:gap-0 gap-4 lg:p-10 bg-[#F7F8FB]">
+        <div className="grid flex  lg:grid-cols-2 grid-cols-1 lg:gap-0 gap-4 lg:p-10 bg-[#F7F8FB]">
       {/* Left Column */}
-      <div className="flex-1 px-25 p-4">
+      <div className="flex-1 px-2 md:px-25 p-4">
         <h2 className='text-4xl font-medium text-[#100B39] mb-4'>Contact Us</h2>
          <ul className="space-y-3">
       <li className="flex items-center gap-3">
@@ -212,7 +212,7 @@ function App() {
     </ul>
       </div>
       {/* Right Column */}
-      <div className="flex-1  mx-25 ">
+      <div className="flex-1 mx-2  md:mx-25 ">
            <form className="space-y-5 ps-0 me-5 ">
         {/* First & Last Name */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -286,7 +286,7 @@ function App() {
       <footer className="bg-[#09091B] text-white p-5 ">
       {/* Row 1 */}
       {/* Row 2 */}
-      <div className="grid px-25 py-5 md:grid-cols-3 gap-15 ">
+      <div className="grid px-2 md:px-25 py-5 md:grid-cols-3 gap-15 ">
         <div> 
           <h2 className="text-xl flex-col justify-item-start items-top px-6  font-semibold">
             <img src={logoImg} alt="logo" className="" />
