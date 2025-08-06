@@ -21,9 +21,10 @@ import { IoLogoInstagram } from "react-icons/io";
 import { FaTwitter } from "react-icons/fa";
 import { FaGlobe } from "react-icons/fa";
 import { FaRegCircleCheck } from "react-icons/fa6";
-
+import { FaBars } from 'react-icons/fa';
 function App() {
   // const [count, setCount] = useState(0)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
     <>
@@ -34,33 +35,43 @@ function App() {
       bg-gradient-to-br from-transparent via-[#09091B] to-transparent
       ">
       <div>
-      <nav className="bg-transparent px-4 pt-8 py-3">
-  <div className="max-w-7xl mx-auto flex items-center justify-between">
-    
-    {/* Logo */}
-    <div>
-      <img src={logoImg} alt="logo" className="h-20 w-auto " />
-    </div>
+<nav className="bg-transparent px-4 pt-8 py-3">
+      <div className="max-w-7xl mx-auto flex items-center justify-between">
+        
+        {/* Logo */}
+        <div>
+          <img src={logoImg} alt="logo" className="h-20 w-auto" />
+        </div>
 
-    {/* Mobile Hamburger Menu (optional) */}
-    
+        {/* Desktop Nav Buttons */}
+        <div className="hidden md:flex gap-4 text-white">
+          <button type="button" className="hover:text-gray-300 bg-white p-1 px-6 text-lg text-black border-white">Enquire</button>
+          <button type="button" className="hover:text-gray-300 border p-1 px-6 text-lg border-white">Login</button>
+        </div>
 
-    {/* Desktop Nav Buttons */}
-    <div className="hidden md:flex gap-4 text-white">
-      <button type="button" className="hover:text-gray-300 bg-white p-1 px-6 text-lg text-black border-white">Enquire</button>
-      <button type="button" className="hover:text-gray-300 border-1 p-1 px-6 text-lg border-white">Login</button>
-    </div>
-    <el-disclosure id="mobile-menu" hidden class="block sm:hidden">
-    <button type="button" className="hover:text-gray-300 bg-white p-1 px-6 text-lg text-black border-white">Enquire</button>
-      <button type="button" className="hover:text-gray-300 border-1 p-1 px-6 text-lg border-white">Login</button>
-    
-  </el-disclosure>
+        {/* Mobile Hamburger */}
+        <div className="md:hidden">
+          <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+            <FaBars className="text-white text-2xl" />
+          </button>
+        </div>
+      </div>
 
-  </div>
-</nav>
+      {/* Mobile Nav Menu */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden flex flex-col gap-2 mt-4 text-white items-start px-4">
+          <button className="hover:text-gray-300 bg-white p-1 px-6 text-lg text-black border-white w-full text-left">
+            Enquire
+          </button>
+          <button className="hover:text-gray-300 border p-1 px-6 text-lg border-white w-full text-left">
+            Login
+          </button>
+        </div>
+      )}
+    </nav>
 
       </div>
-      <div className="grid flex justify-center pe-0 items-center ps-30 grid-cols-1 md:grid-cols-2 gap-5">
+      <div className="grid justify-center pe-0 items-center  ps-3 md:ps-10 lg:ps-30 grid-cols-1 md:grid-cols-2 md:gap-5 ">
       <div className="text-white flex-2 aspect-3/2 gap-1">
       <div className="grid flex-col grid-rows-3 inline-block pt-0 leading-loose ">
       
@@ -84,12 +95,12 @@ function App() {
     </div>
 
       </div>
-      <div className=" flex-1 text-white pe-0 ">
+      <div className=" flex-1 text-white lg:pe-0 ">
       <img src={heroImg} alt="Hero" className="drop-shadow-[0_0_30px_#1b1b7a] brightness-100 saturate-150" />
       </div>
       </div>
       </div>
-      <div className='pt-15 pb-7 px-15 bg-[#F7F8FB]'>
+      <div className='pt-15 pb-7 px-3 md:px-15 bg-[#F7F8FB]'>
          <div className="grid  items-top  p-7 px-15 grid-cols-1 md:grid-cols-2  ">
       <div className='text-4xl font-medium text-[#100B39] ps-10 pt-4 '>
         About Vellore Semicon
@@ -116,7 +127,7 @@ function App() {
         <div className='text-4xl mb-10 font-medium text-[#100B39] ps-10 '>
           We Offer
         </div>
-        <div className=' px-10  flex  justify-items-center items-center grid-cols-1  md:grid-cols-4 gap-4'>
+        <div className=' lg:px-10 px-2 md:px-4 grid    justify-items-center items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-4   gap-4'>
           
            <div className='border-2 flex-row justify-items-start items-center inline-block p-5 border-[#CBCBCB] rounded-3xl'>
             <p className='text-xl p-1 font-bold text-[#1126E4] '>01</p>
@@ -155,7 +166,7 @@ function App() {
       </div>
       {/* Our True Client */}
       <div className='flex  justify-center items-center text-xl  p-3 '>    
-        <div className='px-25 py-3'>
+        <div className='px-3 md:px-25 py-3'>
             <h2 className='text-4xl   text-center font-medium text-[#100B39] mb-4'>Our Trusted clients</h2>
             <div className="grid grid-cols-5 grid-rows-2 gap-4">            
                <div className=" p-4"><img src={one} alt="one" className="" /></div>
@@ -172,7 +183,7 @@ function App() {
         </div>
         </div>
         {/* our contact */}
-        <div className="flex p-10 bg-[#F7F8FB]">
+        <div className="grid flex p-2 lg:grid-cols-2 grid-cols-1 md lg:gap-0 gap-4 lg:p-10 bg-[#F7F8FB]">
       {/* Left Column */}
       <div className="flex-1 px-25 p-4">
         <h2 className='text-4xl font-medium text-[#100B39] mb-4'>Contact Us</h2>
